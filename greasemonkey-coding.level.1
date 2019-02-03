@@ -1,0 +1,16 @@
+// ==UserScript==
+// @name     First Script
+// @version  1
+// @match https://www.hackthis.co.uk/levels/coding/1
+// @grant    none
+// @require http://code.jquery.com/jquery-latest.min.js
+// ==/UserScript==
+          
+$(document).ready(function(){
+ 
+	let text0=$('textarea').eq(0).text();
+  let urray=text0.split(', ');
+  urray.sort();
+  $('textarea').eq(1).text(urray.join(', '));
+  $('form').submit();
+});
